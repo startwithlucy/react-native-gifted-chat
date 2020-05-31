@@ -99,19 +99,13 @@ export default class Avatar<
           avatarStyle={
             [
               styles[this.props.position].image,
-              this.props.imageStyle &&
-                this.props.imageStyle[this.props.position],
+              this.props.imageStyle && this.props.imageStyle[this.props.position],
             ] as ImageStyle
           }
+          textStyle={this.props.textStyle ? this.props.textStyle : {}}
           user={this.props.currentMessage.user}
-          onPress={() =>
-            this.props.onPressAvatar &&
-            this.props.onPressAvatar(this.props.currentMessage!.user)
-          }
-          onLongPress={() =>
-            this.props.onLongPressAvatar &&
-            this.props.onLongPressAvatar(this.props.currentMessage!.user)
-          }
+          onPress={() => this.props.onPressAvatar && this.props.onPressAvatar(this.props.currentMessage!.user)}
+          onLongPress={() => this.props.onLongPressAvatar && this.props.onLongPressAvatar(this.props.currentMessage!.user)}
         />
       )
     }
